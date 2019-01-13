@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
         }
 
 
-        std::sort(ip_pool.begin(), ip_pool.end(), [](std::vector<std::string>& a, std::vector<std::string>& b){
+        std::sort(ip_pool.begin(), ip_pool.end(), [](auto a, auto b){
             if (atoi(a[0].c_str()) > atoi(b[0].c_str())) return true;
             else if (atoi(a[0].c_str()) < atoi(b[0].c_str())) return false;
             else if (atoi(a[1].c_str()) > atoi(b[1].c_str())) return true;
