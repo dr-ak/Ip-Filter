@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-#project(ipfilter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
-project(ipfilter VERSION 0.0.1)
+project(ipfilter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(GTest REQUIRED)
 
