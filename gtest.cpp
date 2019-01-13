@@ -6,7 +6,7 @@ TEST(GTest, TestSplit){
     std::string str = "222.173.235.246";
     std::vector <std::string> b = split(str, '.');
 
-    for (auto i = 0; i < a.size(); ++i)
+    for (unsigned i = 0; i < a.size(); ++i)
         ASSERT_STREQ(a[i].c_str(), b[i].c_str());
 }
 
