@@ -1,7 +1,5 @@
 language: cpp
 before_script:
-- sudo apt install build-essential
-- g++ --version
 - sudo apt-get install libboost-test-dev -y
 - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
 - sudo apt-get update -qq
@@ -12,6 +10,9 @@ before_script:
 - sudo make
 - sudo cp *.a /usr/lib
 - cd $TRAVIS_BUILD_DIR
+- sudo apt-get install build-essential
+- g++ --version
+
 
 
 script:
