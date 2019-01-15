@@ -5,6 +5,7 @@ before_script:
 - sudo apt-get install libboost-test-dev -y
 - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
 - sudo apt-get update -qq
+- sudo apt-get install clang
 - sudo apt-get install libgtest-dev
 - sudo apt-get install cmake
 - cd /usr/src/gtest/
@@ -12,7 +13,6 @@ before_script:
 - sudo make
 - sudo cp *.a /usr/lib
 - cd $TRAVIS_BUILD_DIR
-- sudo apt-get install clang
 
 
 script:
