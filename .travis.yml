@@ -1,4 +1,6 @@
 language: cpp
+compiler: clang++
+
 before_script:
 - sudo apt-get install libboost-test-dev -y
 - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
@@ -10,11 +12,6 @@ before_script:
 - sudo make
 - sudo cp *.a /usr/lib
 - cd $TRAVIS_BUILD_DIR
-- sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-- sudo apt-get update
-- sudo apt-get install build-essential
-- g++ --version
-
 
 
 script:
