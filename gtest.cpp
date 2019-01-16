@@ -1,5 +1,7 @@
 #include "lib_ip_filter.hpp"
 #include <gtest/gtest.h>
+#include <string>
+
 
 /*TEST(GTest, TestSplit){
     std::vector <std::string> a = {"222", "173", "235", "246"};
