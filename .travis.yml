@@ -1,7 +1,6 @@
 language: cpp
 
 before_script:
-- sudo apt-get install libboost-test-dev -y
 - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
 - sudo apt-get update -qq
 
@@ -11,6 +10,7 @@ before_install:
 - sudo apt-get update -qq
 
 install:
+- sudo apt-get install libboost-test-dev -y
 - sudo apt-get install -qq g++-6
 - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 - sudo apt-get install libgtest-dev
