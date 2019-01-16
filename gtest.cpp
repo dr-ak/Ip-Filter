@@ -11,9 +11,9 @@
 }*/
 
 TEST(GTest, TestAllowPrintIp){
-    //std::string str = "222.173.235.246";
-    //ASSERT_TRUE(allow_print_ip("\\.173\\.", str));
-    ASSERT_TRUE(true);
+    std::string str = "222.173.235.246";
+    ASSERT_TRUE(allow_print_ip("\\.173\\.", str));
+    //ASSERT_TRUE(true);
 
 }
 
