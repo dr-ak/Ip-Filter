@@ -21,7 +21,7 @@ int main()
 
         std::sort(ip_pool.begin(), ip_pool.end(), [](const auto& first, const auto& second){
             assert(first.size() == second.size());
-            for(int i = 0; i < first.size(); ++i){
+            for(unsigned i = 0; i < first.size(); ++i){
                 if (first[i] > second[i]) return true;
                 else if (first[i] < second[i]) return false;
             }
