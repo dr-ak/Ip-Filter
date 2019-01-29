@@ -7,34 +7,31 @@
 // (".11", '.') -> ["", "11"]
 // ("11.22", '.') -> ["11", "22"]
 
-int main(int argc, char const *argv[])
+int main()
 {
     try
     {
-        std::vector<std::vector<std::string> > ip_pool;
+        std::vector<std::vector<int> > ip_pool;
 
         for(std::string line; std::getline(std::cin, line);)
         {
             std::vector<std::string> v = split(line, '\t');
-            ip_pool.push_back(split(v.at(0), '.'));
+            ip_pool.push_back(split_to_int(v.at(0), '.'));
         }
 
-
-        std::sort(ip_pool.begin(), ip_pool.end(), [](auto& a, auto& b){
-            if (atoi(a[0].c_str()) > atoi(b[0].c_str())) return true;
-            else if (atoi(a[0].c_str()) < atoi(b[0].c_str())) return false;
-            else if (atoi(a[1].c_str()) > atoi(b[1].c_str())) return true;
-            else if (atoi(a[1].c_str()) < atoi(b[1].c_str())) return false;
-            else if (atoi(a[2].c_str()) > atoi(b[2].c_str())) return true;
-            else if (atoi(a[2].c_str()) < atoi(b[2].c_str())) return false;
-            else if (atoi(a[3].c_str()) > atoi(b[3].c_str())) return true;
-            else return false;
+        std::sort(ip_pool.begin(), ip_pool.end(), [](const auto& first, const auto& second){
+            assert(first.size() == second.size());
+            for(int i = 0; i < first.size(); ++i){
+                if (first[i] > second[i]) return true;
+                else if (first[i] < second[i]) return false;
+            }
+            return false;
         });
-        
-        print_ip_pool(ip_pool);
-        print_ip_pool(ip_pool, "^1\\.");
-        print_ip_pool(ip_pool, "^46\\.70\\.");
-        print_ip_pool(ip_pool, "(^46\\.)|(\\.46\\.)|(\\.46$)");
+
+        filter(ip_pool);
+        filter(ip_pool, 1);
+        filter(ip_pool, 46, 70);
+        filter_any(ip_pool, 46);
 
 
         // 222.173.235.246
