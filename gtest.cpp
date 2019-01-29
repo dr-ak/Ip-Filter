@@ -6,6 +6,7 @@ TEST(GTest, TestSplit){
     std::string a = "185.69.186.168";
     std::vector <std::string> b = split(str, '\t');
     ASSERT_STREQ(a.c_str(), b[0].c_str());
+<<<<<<< HEAD
     str = "110.152.103.161	        0	1";
     a = "110.152.103.161";
     b = split(str, '\t');
@@ -38,6 +39,24 @@ TEST(GTest, TestSplitToInt){
     a = {0, 173, 235, 246};
     str = ".173.235.246";
     b = split_to_int(str, '.');
+=======
+    str = "110.152.103.161	0	1";
+    a = "110.152.103.161";
+    b = split(str, '\t');
+    ASSERT_STREQ(a.c_str(), b[0].c_str());
+    str = "185.182.81.131	1	1";
+    a = "185.182.81.131";
+    b = split(str, '\t');
+    ASSERT_STREQ(a.c_str(), b[0].c_str());
+}
+
+
+TEST(GTest, TestSplitToInt){
+    std::vector <int> a = {222, 173, 235, 246};
+    std::string str = "222.173.235.246";
+    std::vector <int> b = split_to_int(str, '.');
+
+>>>>>>> 1db41e7354438c54fa5c5ab3f1a104b0fbe47099
     for (unsigned i = 0; i < a.size(); ++i)
         ASSERT_EQ(a[i], b[i]);
 }

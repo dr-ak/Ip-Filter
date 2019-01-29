@@ -20,14 +20,22 @@ int main()
         }
 
         std::sort(ip_pool.begin(), ip_pool.end(), [](const auto& first, const auto& second){
+<<<<<<< HEAD
             assert(first.size() == second.size());
             for(int i = 0; i < first.size(); ++i){
+=======
+            for(int i = 0; i < 4; ++i){
+>>>>>>> 1db41e7354438c54fa5c5ab3f1a104b0fbe47099
                 if (first[i] > second[i]) return true;
                 else if (first[i] < second[i]) return false;
             }
             return false;
         });
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 1db41e7354438c54fa5c5ab3f1a104b0fbe47099
         filter(ip_pool);
         filter(ip_pool, 1);
         filter(ip_pool, 46, 70);
